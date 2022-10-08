@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../shared/component/components.dart';
 
 class NewPage extends StatelessWidget {
-   NewPage({Key? key}) : super(key: key);
+  NewPage({Key? key}) : super(key: key);
   List<BottomNavigationBarItem> bottomItems = [
     const BottomNavigationBarItem(
         icon: Icon(
@@ -25,7 +25,6 @@ class NewPage extends StatelessWidget {
           Icons.save_alt,
         ),
         label: 'Saved'),
-
   ];
   @override
   Widget build(BuildContext context) {
@@ -52,73 +51,77 @@ class NewPage extends StatelessWidget {
         unselectedItemColor: Colors.grey,
         backgroundColor: Colors.transparent,
         elevation: 0,
-
-        currentIndex:0 ,
-        onTap: (index){},
-        items:bottomItems,
+        currentIndex: 0,
+        onTap: (index) {},
+        items: bottomItems,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Breaking News',
-              style: TextStyle(
-                fontSize: 26.0,
-                fontWeight: FontWeight.w600,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Breaking News',
+                style: TextStyle(
+                  fontSize: 26.0,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
+              const SizedBox(
+                height: 20.0,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    FirstRow(),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    FirstRow(),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              const Text(
+                'Recent News',
+                style: TextStyle(
+                  fontSize: 26.0,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Column(
                 children: [
-                  FirstRow(),
+                  nextCool(),
                   const SizedBox(
-                    width: 10,
+                    height: 18.0,
                   ),
-                  FirstRow(),
+                  nextCool(),
+                  const SizedBox(
+                    height: 18.0,
+                  ),
+                  nextCool(),
+                  const SizedBox(
+                    height: 18.0,
+                  ),
+                  nextCool(),
+                  const SizedBox(
+                    height: 18.0,
+                  ),
+                  nextCool(),
+                  const SizedBox(
+                    height: 18.0,
+                  ),
                 ],
-              ),
-            ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            const Text(
-              'Recent News',
-              style: TextStyle(
-                fontSize: 26.0,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            // Row(
-            //   children: [
-            //     Container(
-            //       height: 150.0,
-            //       width: 150.0,
-            //       child: ClipRRect(
-            //         borderRadius: BorderRadius.circular(16.0),
-            //         child: Image(image: NetworkImage(
-            //             'https://media.gemini.media/img/yallakora/Normal//2022/10/8/capture2022_10_8_13_1.jpg'
-            //         ),
-            //         ),
-            //       ),
-            //     ),
-            //     SizedBox(width: 10.0,),
-            //     Text(
-            //         'Sky and its trusted partners need your permission to store and access cookies, unique identifiers, personal data, and information on your browsing behaviour on this device',
-            //     maxLines: 3,
-            //
-            //     )
-            //   ],
-            // )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
